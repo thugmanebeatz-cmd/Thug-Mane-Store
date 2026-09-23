@@ -177,3 +177,57 @@ footer {
 
     font-size: 13px;
 }
+/* LICENSE OPTIONS */
+
+.license-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.license {
+    background: #111;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.license h4 {
+    margin-bottom: 10px;
+}
+
+.license p {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.license strong {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.license button {
+    width: 100%;
+}
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 8px;
+    }
+
+    .hero h2 {
+        font-size: 40px;
+    }
+
+    .license-options {
+        grid-template-columns: 1fr;
+    }
+
+}
