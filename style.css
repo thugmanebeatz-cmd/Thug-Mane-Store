@@ -1,233 +1,706 @@
+/* =====================================================
+   THUG MANE BEAT STORE
+   ===================================================== */
+
+
+/* ================= RESET ================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #0d0d0d;
-    color: white;
+
+/* ================= GLOBAL ================= */
+
+html {
+    scroll-behavior: smooth;
 }
 
-/* HEADER */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0d0d0d;
+    color: white;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* ================= HEADER ================= */
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    padding: 20px 8%;
+    padding: 22px 8%;
 
     border-bottom: 1px solid #222;
-}
 
-header h1 {
-    font-size: 24px;
-    letter-spacing: 2px;
-}
+    position: sticky;
+    top: 0;
 
-nav a {
-    color: white;
-    text-decoration: none;
+    background: rgba(13, 13, 13, 0.95);
 
-    margin-left: 25px;
+    backdrop-filter: blur(10px);
 
-    font-size: 14px;
-}
-
-nav a:hover {
-    opacity: 0.6;
+    z-index: 1000;
 }
 
 
-/* HERO */
-
-.hero {
-    min-height: 70vh;
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    padding: 40px 20px;
-}
-
-.hero h2 {
-    font-size: 60px;
+.logo {
+    font-size: 22px;
+    font-weight: bold;
 
     letter-spacing: 3px;
-
-    margin-bottom: 20px;
 }
 
-.hero p {
+
+nav {
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+nav a {
     color: #aaa;
 
-    margin-bottom: 30px;
+    text-decoration: none;
 
-    font-size: 18px;
+    font-size: 14px;
+
+    transition: 0.2s;
 }
 
-.button {
-    display: inline-block;
+
+nav a:hover {
+    color: white;
+}
+
+
+#cart-count {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 20px;
+    height: 20px;
+
+    padding: 0 5px;
+
+    margin-left: 4px;
+
+    border-radius: 50%;
 
     background: white;
     color: black;
 
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 80vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+
+.hero-small {
+    color: #888;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+
+.hero h1 {
+    font-size: clamp(45px, 8vw, 80px);
+
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+}
+
+
+.hero-description {
+    max-width: 600px;
+
+    color: #999;
+
+    font-size: 18px;
+
+    margin-bottom: 35px;
+}
+
+
+/* ================= BUTTON ================= */
+
+.main-button {
+    display: inline-block;
+
     padding: 15px 30px;
+
+    background: white;
+
+    color: black;
+
+    border: none;
 
     text-decoration: none;
 
     font-weight: bold;
 
-    transition: 0.3s;
+    cursor: pointer;
+
+    transition: 0.2s;
 }
 
-.button:hover {
-    transform: scale(1.05);
+
+.main-button:hover {
+    transform: translateY(-2px);
+
+    background: #ddd;
 }
 
 
-/* BEATS */
+.main-button:disabled {
+    opacity: 0.4;
 
-#beats {
-    padding: 80px 8%;
+    cursor: not-allowed;
+
+    transform: none;
 }
 
-#beats h2 {
-    margin-bottom: 40px;
 
-    font-size: 32px;
+/* ================= SECTIONS ================= */
+
+#beats,
+#cart,
+#checkout,
+#about {
+    padding: 100px 8%;
 }
 
+
+.section-title {
+    margin-bottom: 45px;
+}
+
+
+.section-title p {
+    color: #777;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 8px;
+}
+
+
+.section-title h2 {
+    font-size: 34px;
+
+    letter-spacing: 1px;
+}
+
+
+/* ================= BEAT CARD ================= */
 
 .beat-card {
     background: #151515;
 
-    padding: 25px;
+    border: 1px solid #262626;
 
-    margin-bottom: 20px;
+    padding: 30px;
 
-    border: 1px solid #222;
+    margin-bottom: 25px;
 }
 
-.beat-card h3 {
-    font-size: 24px;
+
+.beat-tag {
+    display: inline-block;
+
+    color: #aaa;
+
+    border: 1px solid #444;
+
+    padding: 5px 10px;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+
+.beat-info h3 {
+    font-size: 32px;
+
+    margin-bottom: 5px;
+}
+
+
+.beat-info p {
+    color: #777;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================= AUDIO ================= */
+
+.audio-player {
+    margin-bottom: 30px;
+}
+
+
+.audio-player p {
+    color: #666;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+
+audio {
+    width: 100%;
+
+    max-width: 700px;
+}
+
+
+/* ================= LICENSES ================= */
+
+.license-options {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+
+.license {
+    background: #101010;
+
+    border: 1px solid #303030;
+
+    padding: 22px;
+}
+
+
+.license h4 {
+    font-size: 15px;
 
     margin-bottom: 10px;
 }
 
-.beat-card p {
-    color: #888;
 
-    margin-bottom: 20px;
+.license p {
+    color: #777;
+
+    font-size: 13px;
+
+    margin-bottom: 18px;
 }
 
 
-.beat-card button {
-    padding: 10px 18px;
+.license strong {
+    display: block;
 
-    margin-right: 10px;
+    font-size: 21px;
+
+    margin-bottom: 18px;
+}
+
+
+.buy-button {
+    width: 100%;
+
+    padding: 11px;
 
     background: transparent;
 
     color: white;
 
-    border: 1px solid #444;
+    border: 1px solid #555;
 
     cursor: pointer;
+
+    transition: 0.2s;
 }
 
-.beat-card button:hover {
+
+.buy-button:hover {
     background: white;
+
     color: black;
 }
 
 
-/* ABOUT */
+/* ================= COMING SOON ================= */
 
-#about {
-    padding: 80px 8%;
+.coming-soon {
+    text-align: center;
 
+    padding: 60px 20px;
+}
+
+
+.coming-soon span {
+    color: #666;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+}
+
+
+.coming-soon h3 {
+    margin-top: 10px;
+}
+
+
+/* ================= CART ================= */
+
+#cart {
     background: #111;
 }
 
-#about h2 {
-    margin-bottom: 20px;
-}
 
-#about p {
-    color: #aaa;
+#cart-items {
+    max-width: 900px;
 }
 
 
-/* FOOTER */
+.empty-cart {
+    color: #777;
 
-footer {
-    text-align: center;
+    padding: 30px 0;
+}
 
-    padding: 30px;
 
+.cart-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #292929;
+}
+
+
+.cart-item-info h3 {
+    font-size: 17px;
+}
+
+
+.cart-item-info p {
     color: #777;
 
     font-size: 13px;
 }
-/* LICENSE OPTIONS */
 
-.license-options {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 25px;
+
+.cart-item-price {
+    font-weight: bold;
+
+    white-space: nowrap;
 }
 
-.license {
-    background: #111;
-    border: 1px solid #333;
-    padding: 20px;
+
+.remove-button {
+    background: none;
+
+    color: #777;
+
+    border: none;
+
+    cursor: pointer;
+
+    margin-left: 15px;
 }
 
-.license h4 {
-    margin-bottom: 10px;
+
+.remove-button:hover {
+    color: white;
 }
 
-.license p {
-    color: #888;
-    font-size: 14px;
-    margin-bottom: 15px;
+
+.cart-summary {
+    max-width: 900px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 35px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #333;
 }
 
-.license strong {
+
+.cart-summary > div {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.cart-summary span {
+    color: #777;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+.cart-summary strong {
+    font-size: 25px;
+}
+
+
+.checkout-button {
+    padding: 14px 25px;
+
+    background: white;
+
+    color: black;
+
+    border: none;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.checkout-button:disabled {
+    opacity: 0.35;
+
+    cursor: not-allowed;
+}
+
+
+/* ================= CHECKOUT ================= */
+
+#checkout {
+    max-width: 900px;
+
+    margin: auto;
+}
+
+
+#checkout-form {
+    max-width: 600px;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
     display: block;
-    font-size: 20px;
-    margin-bottom: 15px;
+
+    color: #aaa;
+
+    font-size: 13px;
+
+    margin-bottom: 8px;
 }
 
-.license button {
+
+.form-group input {
     width: 100%;
+
+    padding: 14px;
+
+    background: #151515;
+
+    color: white;
+
+    border: 1px solid #333;
+
+    outline: none;
 }
+
+
+.form-group input:focus {
+    border-color: #777;
+}
+
+
+.order-message {
+    margin-top: 25px;
+
+    color: #aaa;
+
+    line-height: 1.7;
+}
+
+
+/* ================= ABOUT ================= */
+
+#about {
+    background: #111;
+}
+
+
+.about-text {
+    max-width: 700px;
+
+    color: #999;
+
+    font-size: 17px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+
+    padding: 35px;
+
+    border-top: 1px solid #222;
+
+    color: #666;
+
+    font-size: 12px;
+}
+
+
+footer p:first-child {
+    margin-bottom: 5px;
+}
+
+
+/* ================= MOBILE ================= */
+
 @media (max-width: 768px) {
 
     header {
         flex-direction: column;
+
         gap: 15px;
+
+        padding: 18px 5%;
     }
+
+
+    nav {
+        gap: 14px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
 
     nav a {
-        margin: 0 8px;
+        font-size: 12px;
     }
 
-    .hero h2 {
-        font-size: 40px;
+
+    .hero {
+        min-height: 70vh;
     }
+
+
+    .hero h1 {
+        letter-spacing: 2px;
+    }
+
+
+    #beats,
+    #cart,
+    #checkout,
+    #about {
+        padding: 70px 5%;
+    }
+
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+
+    .beat-card {
+        padding: 20px;
+    }
+
 
     .license-options {
         grid-template-columns: 1fr;
+    }
+
+
+    .cart-item {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .cart-summary {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 25px;
+    }
+
+
+    .checkout-button {
+        width: 100%;
     }
 
 }
