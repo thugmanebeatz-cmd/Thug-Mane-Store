@@ -1,148 +1,454 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Thug Mane Beat Store — Premium Trap, Drill and Afro beats."
+    >
 
     <title>Thug Mane | Beat Store</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
+    <!-- ================= HEADER ================= -->
+
     <header>
-        <h1>THUG MANE ON DA TRACK</h1>
+
+        <div class="logo">
+            THUG MANE
+        </div>
 
         <nav>
-            <a href="#">Accueil</a>
-            <a href="#beats">Beats</a>
-            <a href="#about">À propos</a>
+
+            <a href="#home">
+                Accueil
+            </a>
+
+            <a href="#beats">
+                Beats
+            </a>
+
+            <a href="#about">
+                À propos
+            </a>
+
+            <a href="#cart">
+                Panier
+                <span id="cart-count">0</span>
+            </a>
+
         </nav>
+
     </header>
 
 
+    <!-- ================= HERO ================= -->
+
     <main>
 
-        <section class="hero">
+        <section id="home" class="hero">
 
-            <h2>FIND YOUR SOUND</h2>
-
-            <p>
-                Premium beats produced by Thug Mane.
+            <p class="hero-small">
+                THUG MANE BEAT STORE
             </p>
 
-            <a href="#beats" class="button">
+            <h1>
+                FIND YOUR SOUND
+            </h1>
+
+            <p class="hero-description">
+                Premium beats produced by Thug Mane.
+                Trap, Drill, Afro and more.
+            </p>
+
+            <a
+                href="#beats"
+                class="main-button"
+            >
                 EXPLORE BEATS
             </a>
 
         </section>
 
 
+        <!-- ================= BEATS ================= -->
+
         <section id="beats">
 
-            <h2>FEATURED BEATS</h2>
+            <div class="section-title">
 
+                <p>
+                    THE CATALOG
+                </p>
 
-          <div class="beat-card">
-
-    <h3>BANDIT</h3>
-
-    <p>Drill • 140 BPM • F# Minor</p>
-
-    <audio controls>
-        <source src="Bandit_preview.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-
-    <br><br>
-
-    <div class="license-options">
-
-    <div class="license">
-        <h4>MP3 LICENSE</h4>
-        <p>MP3 untagged</p>
-        <strong>10 000 FCFA</strong>
-        <button>BUY</button>
-    </div>
-
-    <div class="license">
-        <h4>WAV LICENSE</h4>
-        <p>WAV + MP3 untagged</p>
-        <strong>20 000 FCFA</strong>
-        <button>BUY</button>
-    </div>
-
-    <div class="license">
-        <h4>EXCLUSIVE</h4>
-        <p>Beat exclusif</p>
-        <strong>75 000 FCFA</strong>
-        <button>BUY</button>
-    </div>
-
-</div>
-
-</div>
-
-
-            <div class="beat-card">
-
-                <h3>NEW BEAT</h3>
-
-                <p>Trap • BPM • Key</p>
-
-                <button>▶ PLAY</button>
-
-                <button>BUY LICENSE</button>
+                <h2>
+                    FEATURED BEATS
+                </h2>
 
             </div>
 
 
-            <div class="beat-card">
+            <!-- ================= BANDIT ================= -->
 
-                <h3>NEW BEAT</h3>
+            <article class="beat-card">
 
-                <p>Trap • BPM • Key</p>
+                <div class="beat-info">
 
-                <button>▶ PLAY</button>
+                    <span class="beat-tag">
+                        TRAP
+                    </span>
 
-                <button>BUY LICENSE</button>
+                    <h3>
+                        BANDIT
+                    </h3>
 
-            </div>
+                    <p>
+                        Trap • 140 BPM • F# Minor
+                    </p>
+
+                </div>
+
+
+                <!-- AUDIO PREVIEW -->
+
+                <div class="audio-player">
+
+                    <p>
+                        PREVIEW
+                    </p>
+
+                    <audio controls preload="metadata">
+
+                        <source
+                            src="./bandit_preview.mp3"
+                            type="audio/mpeg"
+                        >
+
+                        Your browser does not support audio.
+
+                    </audio>
+
+                </div>
+
+
+                <!-- LICENSES -->
+
+                <div class="license-options">
+
+
+                    <!-- MP3 -->
+
+                    <div class="license">
+
+                        <h4>
+                            MP3 LICENSE
+                        </h4>
+
+                        <p>
+                            MP3 untagged
+                        </p>
+
+                        <strong>
+                            10 000 FCFA
+                        </strong>
+
+                        <button
+                            class="buy-button"
+                            data-beat="BANDIT"
+                            data-license="MP3 LICENSE"
+                            data-price="10000"
+                        >
+                            BUY
+                        </button>
+
+                    </div>
+
+
+                    <!-- WAV -->
+
+                    <div class="license">
+
+                        <h4>
+                            WAV LICENSE
+                        </h4>
+
+                        <p>
+                            WAV + MP3 untagged
+                        </p>
+
+                        <strong>
+                            20 000 FCFA
+                        </strong>
+
+                        <button
+                            class="buy-button"
+                            data-beat="BANDIT"
+                            data-license="WAV LICENSE"
+                            data-price="20000"
+                        >
+                            BUY
+                        </button>
+
+                    </div>
+
+
+                    <!-- EXCLUSIVE -->
+
+                    <div class="license">
+
+                        <h4>
+                            EXCLUSIVE
+                        </h4>
+
+                        <p>
+                            Beat exclusif
+                        </p>
+
+                        <strong>
+                            75 000 FCFA
+                        </strong>
+
+                        <button
+                            class="buy-button"
+                            data-beat="BANDIT"
+                            data-license="EXCLUSIVE"
+                            data-price="75000"
+                        >
+                            BUY
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+            </article>
+
+
+            <!-- FUTURE BEATS -->
+
+            <article class="beat-card coming-soon">
+
+                <span>
+                    COMING SOON
+                </span>
+
+                <h3>
+                    NEW BEAT
+                </h3>
+
+                <p>
+                    More productions coming soon.
+                </p>
+
+            </article>
+
 
         </section>
-<section id="cart">
 
-    <h2>YOUR CART</h2>
 
-    <div id="cart-items">
-        <p>Your cart is empty.</p>
-    </div>
+        <!-- ================= CART ================= -->
 
-    <div class="cart-total">
-        <strong>Total : <span id="cart-total">0</span> FCFA</strong>
-    </div>
+        <section id="cart">
 
-    <button id="checkout-button">CHECKOUT</button>
+            <div class="section-title">
 
-</section>
+                <p>
+                    YOUR SELECTION
+                </p>
+
+                <h2>
+                    SHOPPING CART
+                </h2>
+
+            </div>
+
+
+            <div id="cart-items">
+
+                <p class="empty-cart">
+                    Your cart is empty.
+                </p>
+
+            </div>
+
+
+            <div class="cart-summary">
+
+                <div>
+
+                    <span>
+                        TOTAL
+                    </span>
+
+                    <strong>
+                        <span id="cart-total">
+                            0
+                        </span>
+                        FCFA
+                    </strong>
+
+                </div>
+
+
+                <button
+                    id="checkout-button"
+                    class="checkout-button"
+                    disabled
+                >
+                    CHECKOUT
+                </button>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ================= CHECKOUT ================= -->
+
+        <section id="checkout">
+
+            <div class="section-title">
+
+                <p>
+                    ORDER
+                </p>
+
+                <h2>
+                    CUSTOMER INFORMATION
+                </h2>
+
+            </div>
+
+
+            <form id="checkout-form">
+
+
+                <div class="form-group">
+
+                    <label for="customer-name">
+                        Nom / Nom d'artiste
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customer-name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customer-email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="customer-email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customer-phone">
+                        Téléphone
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="customer-phone"
+                        placeholder="+225 ..."
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="main-button"
+                >
+                    PLACE ORDER
+                </button>
+
+
+            </form>
+
+
+            <div
+                id="order-message"
+                class="order-message"
+            ></div>
+
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
 
         <section id="about">
 
-            <h2>ABOUT THUG MANE</h2>
+            <div class="section-title">
 
-            <p>
-                Ivorian producer creating Trap, Drill, Afro-inspired sounds and more style.
+                <p>
+                    THE PRODUCER
+                </p>
+
+                <h2>
+                    ABOUT THUG MANE
+                </h2>
+
+            </div>
+
+
+            <p class="about-text">
+
+                Thug Mane is a music producer creating
+                Trap, Drill, Afro-inspired and versatile
+                urban sounds.
+
+                <br><br>
+
+                The goal is simple:
+                give artists quality productions
+                ready to bring their ideas to life.
+
             </p>
 
         </section>
 
+
     </main>
 
 
+    <!-- ================= FOOTER ================= -->
+
     <footer>
 
-        <p>© 2026 THUG MANE. All rights reserved.</p>
+        <p>
+            © 2026 THUG MANE. All rights reserved.
+        </p>
+
+        <p>
+            Beat Store
+        </p>
 
     </footer>
 
@@ -150,4 +456,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
